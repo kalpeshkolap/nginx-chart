@@ -7,7 +7,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v3
-    - name: echo
-      run: echo hello
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: run Hello World
+        run: echo hello world
+
