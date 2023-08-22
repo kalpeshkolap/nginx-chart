@@ -20,5 +20,5 @@ jobs:
         run: |
           echo ${{ github.server_url }}/${{ github.repository }}
           argocd login argocd.saasdevtoppers.click --username admin --password admin@123
-          argocd repo add ${{ github.server_url }}/${{ github.repository }} --password  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  --grpc-web
+          argocd repo add ${{ github.server_url }}/${{ github.repository }} --password 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 --grpc-web
 
