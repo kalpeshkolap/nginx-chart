@@ -9,7 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
       - name: run Hello World
         run: echo hello world
+
+      - name: Setup ArgoCD CLI 
+        uses: imajeetyadav/argocd-cli@v1
+        with:
+          version: v2.5.7 # optional 
+        run: |
+          argocd login argocd.saasdevtoppers.click --username admin --password admin@123
+          argocd repo add ${{ github.server_url }}/${{ github.repository }} --password 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
 
