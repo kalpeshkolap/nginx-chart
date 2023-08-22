@@ -16,6 +16,7 @@ jobs:
         uses: imajeetyadav/argocd-cli@v1
         with:
           version: v2.5.7 # optional 
+      - name: argocli cmd
         run: |
           argocd login argocd.saasdevtoppers.click --username admin --password admin@123
           argocd repo add ${{ github.server_url }}/${{ github.repository }} --password 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
