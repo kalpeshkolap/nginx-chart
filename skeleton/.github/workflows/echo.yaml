@@ -21,7 +21,7 @@ jobs:
           curl -sSL -o argocd-linux-amd64 https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
           sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
           rm argocd-linux-amd64
-          echo ${{ github.server_url }}/${{ github.repository }}
+          echo ${{ github.server_url }}/${{ github.repository }}/$GIT_TOKEN
           argocd login argocd.saasdevtoppers.click --username admin --password admin@123
           argocd repo add https://github.com/kalpeshkolap/git-actions.git --password $GIT_TOKEN --grpc-web
 
