@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: run Hello World
-        run: echo ${{ github.server_url }}/${{ github.repository }}/$GIT_TOKEN
+        run: echo ${{ github.server_url }}/${{ github.repository }}/${{ GIT_TOKEN }}
 
       # - name: Setup ArgoCD CLI 
       #   uses: imajeetyadav/argocd-cli@v1
