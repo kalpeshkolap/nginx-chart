@@ -23,5 +23,5 @@ jobs:
           rm argocd-linux-amd64
           echo ${{ github.server_url }}/${{ github.repository }}
           argocd login argocd.saasdevtoppers.click --username admin --password admin@123
-          argocd repo add https://github.com/kalpeshkolap/git-actions.git --password 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 --grpc-web
+          argocd repo add https://github.com/kalpeshkolap/git-actions.git --password $GIT_TOKEN --grpc-web
 
