@@ -12,13 +12,16 @@ jobs:
       - name: run Hello World
         run: echo hello world
 
-      - name: Setup ArgoCD CLI 
-        uses: imajeetyadav/argocd-cli@v1
-        with:
-          version: v2.5.7 # optional 
+      # - name: Setup ArgoCD CLI 
+      #   uses: imajeetyadav/argocd-cli@v1
+      #   with:
+      #     version: v2.5.7 # optional 
       - name: argocli cmd
         run: |
+          curl -sSL -o argocd-linux-amd64 https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+          sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
+          rm argocd-linux-amd64
           echo ${{ github.server_url }}/${{ github.repository }}
           argocd login argocd.saasdevtoppers.click --username admin --password admin@123
-          argocd repo add https://github.com/kalpeshkolap/git-actions.git --password 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 --grpc-web
+          argocd repo add https://github.com/kalpeshkolap/git-actions.git --password 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 --grpc-web
 
